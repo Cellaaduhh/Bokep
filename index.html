@@ -145,6 +145,42 @@
             100% { transform: translateX(-50px); }
         }
 
+        /* Modal QRIS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: white;
+            color: black;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -168,7 +204,8 @@
             <p>2GB RAM</p>
             <p>1 CORE CPU</p>
             <a href="https://t.me/BirdCella" class="btn">TELEGRAM</a>
-            <a href="https://wa.me/6288200713853" class="btn">WHATSAPP</a>
+            <a href="https://wa.me/62882007138253" class="btn">WHATSAPP</a>
+            <button class="btn" onclick="openModal()">Bayar dengan QRIS</button>
         </div>
 
         <div class="box">
@@ -178,6 +215,7 @@
             <p>2 CORE CPU</p>
             <a href="https://t.me/BirdCella" class="btn">TELEGRAM</a>
             <a href="https://wa.me/62882007138253" class="btn">WHATSAPP</a>
+            <button class="btn" onclick="openModal()">Bayar dengan QRIS</button>
         </div>
 
         <div class="box">
@@ -187,6 +225,7 @@
             <p>4 CORE CPU</p>
             <a href="https://t.me/BirdCella" class="btn">TELEGRAM</a>
             <a href="https://wa.me/62882007138253" class="btn">WHATSAPP</a>
+            <button class="btn" onclick="openModal()">Bayar dengan QRIS</button>
         </div>
         
         <div class="box">
@@ -196,6 +235,7 @@
             <p>4 CORE CPU</p>
             <a href="https://t.me/BirdCella" class="btn">TELEGRAM</a>
             <a href="https://62882007138235" class="btn">WHATSAPP</a>
+            <button class="btn" onclick="openModal()">Bayar dengan QRIS</button>
         </div>
                 
     </div>
@@ -211,6 +251,7 @@
             <p>FREE TUTOR</p>
             <a href="https://t.me/BirdCella" class="btn">TELEGRAM</a>
             <a href="https://wa.me/62882007138253" class="btn">WHATSAPP</a>
+            <button class="btn" onclick="openModal()">Bayar dengan QRIS</button>
         </div>
 
         <div class="box">
@@ -219,6 +260,7 @@
             <p>FREE TUTOR</p>
             <a href="https://t.me/BirdCella" class="btn">TELEGRAM</a>
             <a href="https://wa.me/62882007138253" class="btn">WHATSAPP</a>
+            <button class="btn" onclick="openModal()">Bayar dengan QRIS</button>
         </div>
 
     </div>
@@ -227,6 +269,32 @@
     <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
         <path fill="#0040ff" fill-opacity="0.7" d="M0,256L48,234.7C96,213,192,171,288,176C384,181,480,235,576,245.3C672,256,768,224,864,202.7C960,181,1056,171,1152,186.7C1248,203,1344,245,1392,266.7L1440,288V320H0Z"></path>
     </svg>
+
+    <!-- Modal QRIS -->
+    <div id="qrisModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Scan QRIS untuk Pembayaran</h3>
+            <img src="https://files.catbox.moe/ntfxui.jpg" alt="QRIS Payment">
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("qrisModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("qrisModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("qrisModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
